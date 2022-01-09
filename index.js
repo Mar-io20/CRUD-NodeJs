@@ -13,19 +13,19 @@ const proficoes = [
 ];
 
 //retorna uma profição
-server.get("/proficoes/:index", (requisicao, resposta) => {
+server.get("/profissoes/:index", (requisicao, resposta) => {
   const { index } = requisicao.params;
 
   return res.json(proficoes[index]);
 });
 
 //retornar todos as profiçoes
-server.get("/proficoes", (requisicao, resposta) => {
+server.get("/profissoes", (requisicao, resposta) => {
   return proficoes.json(proficoes);
 });
 
 // Adicionar nova profção
-server.post("/proficoes", (requisicao, resposta) => {
+server.post("/profissoes", (requisicao, resposta) => {
   const { name } = requisicao.body;
   proficoes.push(name);
 
@@ -34,7 +34,7 @@ server.post("/proficoes", (requisicao, resposta) => {
 
 //Atualizar profiçao
 
-server.put("/proficoes/:index", (requisicao, resposta) => {
+server.put("/profissoes/:index", (requisicao, resposta) => {
   const { index } = requisicao.params;
   const { name } = requisicao.body;
 
@@ -44,11 +44,13 @@ server.put("/proficoes/:index", (requisicao, resposta) => {
 });
 
 //deletar uma profição
-server.delete("/proficoes:/index", (requisicao, resposta) => {
+server.delete("/profissoes/:index", (requisicao, resposta) => {
   const { index } = requisicao.params;
 
   proficoes.splice(index, 1);
   return resposta.json({ message: "O curso foi deletado" });
 });
 
-server.listen(3000);
+
+
+server.listen(3000); 
