@@ -1,6 +1,10 @@
 body {
   margin: 0;
 }
+button{
+  background: #dd6161;
+  border: none;
+}
 
 .app {
   display: flex;
@@ -58,6 +62,7 @@ body {
 
 body {
   margin: 0;
+  background: #46494C;
 }
 
 .app {
