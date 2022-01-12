@@ -10,6 +10,7 @@ const deletarTarefa = (evento) => {
   const tarefaCompleta = botaoDeleta.parentElement;
 
   tarefaCompleta.remove();
+  
 
   return botaoDeleta;
 };

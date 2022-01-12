@@ -23,3 +23,15 @@ import BotaoDeleta from "./components/deletaTarefa.js";
   const novaTarefa = document.querySelector("[data-form-button]");
 
   novaTarefa.addEventListener("click", criarTarefa);
+
+
+
+
+  // 
+
+  var num = 5
+  console.log(num);
+
+  num = "um"
+  console.log(num);
+ 
