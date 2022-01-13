@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [values, setValues] = useState();
+
+  console.log(values);
+  const lidarComMudancaDeValores = (value) => {
+    setValues((prevValue) => ({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }));
+  };
+
+  const handleClickButton = () => {
+    console.log(values);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app--container">
+      <div className="register--container">
+        <h1 className="register--title">Scrim Shop</h1>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nome"
+          className="register--input"
+          onChange={lidarComMudancaDeValores}
+        />
+        <input
+          type="text"
+          name="cost"
+          placeholder="Preço"
+          className="register--input"
+          onChange={lidarComMudancaDeValores}
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Categoria"
+          className="register--input"
+          onChange={lidarComMudancaDeValores}
+        />
+        <button
+          className="register--button"
+          onClick={() => handleClickButton()}
         >
-          Learn React
-        </a>
-      </header>
+          Cadastrar
+        </button>
+      </div>
     </div>
   );
 }
